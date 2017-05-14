@@ -1,11 +1,44 @@
 .key{
+	width: auto;
+	height: auto;
+	display: inline-block;
+
+	border-radius: 5px;
+	width: 90px;
+	height:90px;
+	transition: all .2s ease-in-out;
+	:hover{
+		transform: scale(0.97);
+		cursor: pointer;
+	}
+	h1{
+		margin: 0;
+	}
+}
+
+.number{
 	@include centerContent;
 
-	background-color: #EE730E;
-	color: $white;
-
-	padding: 5%;
+	font-size: 25px;
+	color: $dark-grey;
+	background-color: #EAEEE9;
 	border-radius: 5px;
-	width: 100px;
-	height:100px;
+	width: inherit;
+	height: inherit;
+}
+
+.operator{
+	@include centerContent;
+
+	font-size: 20px;
+	color: $white;
+	background-color: #EE730E;
+	border-radius: 5px;
+	width: inherit;
+	height: inherit;
+}
+
+.sizeH2{
+	width: 195px;
+	height: 90px;
 }
