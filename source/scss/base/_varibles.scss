@@ -1,0 +1,31 @@
+
+// fonts
+
+$font-stack-prim: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-stack-spec: 'Dancing Script', cursive, 'Open Sans', sans-serif;
+
+// colors
+
+$tech-blue: rgb(25,140,250);
+$red: #E25252;
+$dark-red: #A23B3B;
+$white: #fff;
+$black: #000;
+$dark-grey: #3B3B3B;
+$grey: #A6A6A6;
+$light-grey: #DEDEDE;
+$very-light-grey: #FAFAFA;
+
+$color-text-prim: $dark-grey;
+$color-text-sec: $white;
+$color-text-thi: $black;
+$color-text-fou: $grey;
+
+$color-bg-prim: $white;
+$color-bg-prim-dark: $light-grey;
+$color-bg-sec: $dark-grey;
+$color-bg-thi: $red;
+
+// images
+
+$images-root: '../src/images/' !default;

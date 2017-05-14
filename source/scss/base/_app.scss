@@ -1,0 +1,62 @@
+/******************************
+	SCSS FOR MOBILE DIVICES
+******************************/
+
+body {
+	font-family: $font-stack-prim;
+	background-color: $color-bg-prim-dark;
+	color: $color-text-prim;
+	height: 100%;
+	width: 100%;
+}
+
+.content {
+	padding: 20px 0;
+	background-color: $color-bg-prim;
+	color: $color-text-sec;
+}
+
+.App {
+  margin: 5% auto;
+	width: 90%;
+  max-width: 1080px;
+  background:$color-bg-prim-dark;
+  border-radius: 3px;
+}
+
+.BackgroundImgExample {
+  width: 250px;
+  height: 141px;
+  background: url(../assets/img/book1.jpg) no-repeat;
+  background-size: 100% auto;
+}
+
+.ImgExample {
+  width: 250px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+
+h2 {
+	padding: 20px 0 10px 0;
+	margin: 0;
+	font-size: 20px;
+}
+
+.button {
+	font-family: "Helvetica Neue", sans-serif;
+
+	background-color: #F33842;
+	border-radius: 5px;
+	border: none;
+	color: #fff;
+}
+
+/******************************
+	SCSS FOR LARGER DIVICES
+******************************/
