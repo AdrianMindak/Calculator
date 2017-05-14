@@ -17,6 +17,9 @@ body {
 }
 
 .App {
+	@include centerContent;
+	flex-direction: column;
+
   margin: 5% auto;
 	width: 90%;
   max-width: 1080px;

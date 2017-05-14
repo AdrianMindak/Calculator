@@ -1,0 +1,11 @@
+.calculatorBody{
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 700px;
+	width: 500px;
+	background-color: #3B3B3B;
+	border-radius: 30px;
+
+	padding: 5% 2%;
+}

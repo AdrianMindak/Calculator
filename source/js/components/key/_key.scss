@@ -1,0 +1,11 @@
+.key{
+	@include centerContent;
+
+	background-color: #EE730E;
+	color: $white;
+
+	padding: 5%;
+	border-radius: 5px;
+	width: 100px;
+	height:100px;
+}
