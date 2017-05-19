@@ -1,12 +1,106 @@
 .calculatorBody{
 	display:flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
 	height: 700px;
-	width: 440px;
-	background-color: #3B3B3B;
-	border-radius: 30px;
+	width: 400px;
+	background-color: $black;
+	box-shadow: 0px 0px 100px 0px rgba(0,0,0,0.25);
+	border-radius: 10px;
+	overflow: hidden;
+	font-family: $font-stack-prim;
+  font-weight: 300;
+}
 
-	padding: 50px 20px 30px 20px;
+.viewport{
+	padding: 5%;
+	height: 200px;
+	width: 100%;
+	background-color: #1A1A1A;
+	.display{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		overflow: hidden;
+
+		height: 100%;
+		font-size: 4em;
+		color: $white;
+	}
+}
+
+.keyboard{
+	display: flex;
+	width: 100%;
+	height: 500px;
+}
+
+button{
+	@include centerContent;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	width: 100px;
+	height: 100px;
+	transition: all .1s ease-in-out;
+	font-size: 30px;
+	border: solid $grey .25px;
+	&:hover{
+		transform: scale(1.02);
+		cursor: pointer;
+	}
+	&:active{
+		transform: scale(0.97);
+		cursor: pointer;
+	}
+	&[size="2"]{
+		width: 200px;
+		height: 100px;
+	}
+}
+
+.function-keys{
+	display: flex;
+
+	width: 100%;
+	height: 20%;
+	button {
+		@extend button ;
+		margin: 0;
+
+		color: $dark-grey;
+		background-color: #BBBFBC;
+	}
+}
+
+.digit-keys{
+	display: flex;
+	flex-flow: wrap;
+
+	width: 100%;
+	height: 80%;
+	button{
+		@extend button ;
+
+		color: $dark-grey;
+		background-color: #EAEEE9;
+	}
+}
+
+.operator-keys{
+	display: flex;
+	flex-direction: column;
+
+	width: 25%;
+	height: 100%;
+
+	button{
+		@extend button ;
+
+		font-size: 35px;
+		color: $white;
+		background-color: inherit;
+	}
+
+background-image:linear-gradient(#FF8F00, #EE730E);
+
 }

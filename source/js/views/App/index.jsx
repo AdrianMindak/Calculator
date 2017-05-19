@@ -6,7 +6,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<h1>SIMPLE CALULATOR</h1>
+				<div className="placeholder"></div>
 				<Calculator />
 			</div>
     );
