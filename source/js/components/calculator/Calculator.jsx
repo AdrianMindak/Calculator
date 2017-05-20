@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Shortcuts } from 'react-shortcuts';
+
 
 export default class Calculator extends Component {
 	constructor() {
@@ -11,6 +13,16 @@ export default class Calculator extends Component {
 		};
 	}
 
+	_handleShortcuts = (action, event) => {
+		console.log(event);
+    switch (action) {
+      case 'PLUS':
+        console.log('PLUS');
+        break;
+			default: console.log('DEFAULT CASE');
+    }
+  }
+
 	clear() {
 		this.setState({ display: '0', waiting: false, operator: null, hidden: '0' });
 	}
@@ -21,8 +33,12 @@ export default class Calculator extends Component {
 		if (waiting) {
 			this.setState({ display: String(newValue) });
 			this.setState({ waiting: false });
+		} else if (display === '0') {
+			this.setState({ display: String(newValue) });
+		} else if (display === '-0') {
+			this.setState({ display: `-${ newValue }` });
 		} else {
-			this.setState({ display: display === '0' ? String(newValue) : display + newValue });
+			this.setState({ display: display + newValue });
 		}
 	}
 
@@ -76,41 +92,74 @@ export default class Calculator extends Component {
 
 	render() {
 		return (
-			<div className="calculatorBody">
+			<Shortcuts className="calculatorBody" name='CALCULATOR' handler={ this._handleShortcuts }>
 				<div className="viewport">
-					<div className="placeholder"></div>
 					<div className="display">{ this.state.display.toLocaleString() }</div>
 				</div>
 				<div className="keyboard">
-					<div className="left-input-keys">
-						<div className="function-keys">
-							<button onClick={ () => this.clear() }>AC</button>
-							<button onClick={ () => this.negative() }>+/-</button>
-							<button onClick={ () => this.percent() }>%</button>
-						</div>
-						<div className="digit-keys">
-							<button onClick={ () => this.inputDigit(9) }>9</button>
-							<button onClick={ () => this.inputDigit(8) }>8</button>
-							<button onClick={ () => this.inputDigit(7) }>7</button>
-							<button onClick={ () => this.inputDigit(6) }>6</button>
-							<button onClick={ () => this.inputDigit(5) }>5</button>
-							<button onClick={ () => this.inputDigit(4) }>4</button>
-							<button onClick={ () => this.inputDigit(3) }>3</button>
-							<button onClick={ () => this.inputDigit(2) }>2</button>
-							<button onClick={ () => this.inputDigit(1) }>1</button>
-							<button onClick={ () => this.inputDigit(0) } size="2" >0</button>
-							<button onClick={ () => this.inputDot() }>●</button>
-						</div>
+					<div className="landscape">
+						<button onClick={ () => this.operation('=') }>(</button>
+						<button onClick={ () => this.operation('=') }>)</button>
+						<button onClick={ () => this.operation('=') }>mc</button>
+						<button onClick={ () => this.operation('=') }>m+</button>
+						<button onClick={ () => this.operation('=') }>m-</button>
+						<button onClick={ () => this.operation('=') }>mr</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>ln</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>x!</button>
+						<button onClick={ () => this.operation('=') }>sin</button>
+						<button onClick={ () => this.operation('=') }>cos</button>
+						<button onClick={ () => this.operation('=') }>tan</button>
+						<button onClick={ () => this.operation('=') }>e</button>
+						<button onClick={ () => this.operation('=') }>EE</button>
+						<button onClick={ () => this.operation('=') }>Rad</button>
+						<button onClick={ () => this.operation('=') }>sinh</button>
+						<button onClick={ () => this.operation('=') }>cosh</button>
+						<button onClick={ () => this.operation('=') }>tanh</button>
+						<button onClick={ () => this.operation('=') }>???</button>
+						<button onClick={ () => this.operation('=') }>Rand</button>
 					</div>
-					<div className="operator-keys">
-						<button onClick={ () => this.operation('/') }>/</button>
-						<button onClick={ () => this.operation('*') }>x</button>
-						<button onClick={ () => this.operation('-') }>—</button>
-						<button onClick={ () => this.operation('+') }>+</button>
-						<button onClick={ () => this.operation('=') }>=</button>
+					<div className="classic-calc">
+						<div className="left-input-keys">
+							<div className="function-keys">
+								<button onClick={ () => this.clear() }>AC</button>
+								<button onClick={ () => this.negative() }>+/-</button>
+								<button onClick={ () => this.percent() }>%</button>
+							</div>
+							<div className="digit-keys">
+								<button onClick={ () => this.inputDigit(9) }>9</button>
+								<button onClick={ () => this.inputDigit(8) }>8</button>
+								<button onClick={ () => this.inputDigit(7) }>7</button>
+								<button onClick={ () => this.inputDigit(6) }>6</button>
+								<button onClick={ () => this.inputDigit(5) }>5</button>
+								<button onClick={ () => this.inputDigit(4) }>4</button>
+								<button onClick={ () => this.inputDigit(3) }>3</button>
+								<button onClick={ () => this.inputDigit(2) }>2</button>
+								<button onClick={ () => this.inputDigit(1) }>1</button>
+								<button onClick={ () => this.inputDigit(0) } size="2" >0</button>
+								<button onClick={ () => this.inputDot() }>●</button>
+							</div>
+						</div>
+						<div className="operator-keys">
+							<button onClick={ () => this.operation('/') }>/</button>
+							<button onClick={ () => this.operation('*') }>x</button>
+							<button onClick={ () => this.operation('-') }>—</button>
+							<button onClick={ () => this.operation('+') }>+</button>
+							<button onClick={ () => this.operation('=') }>=</button>
+						</div>
 					</div>
 				</div>
-			</div>
+			</Shortcuts>
     );
   }
 }

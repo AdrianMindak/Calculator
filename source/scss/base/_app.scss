@@ -1,53 +1,27 @@
 /******************************
 	SCSS FOR MOBILE DIVICES
 ******************************/
+html{
+	@include centerContent;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: red;
+}
 
 body {
-	font-family: $font-stack-prim;
-	background-color: $color-bg-prim-dark;
-	color: $color-text-prim;
+	@include centerContent;
+	background-color: blue;
 	height: 100%;
 	width: 100%;
 }
 
-.content {
-	padding: 20px 0;
-	background-color: $color-bg-prim;
-	color: $color-text-sec;
-}
-
 .App {
 	@include centerContent;
-	flex-direction: column;
-
-  margin: 5% auto;
-	width: 90%;
-  max-width: 1080px;
-  background:$color-bg-prim-dark;
-  border-radius: 3px;
+	background:$black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
-
-hr {
-  border: 0;
-  border-top: 1px solid #ddd;
-  margin: 20px 0;
-}
-
-h2 {
-	padding: 20px 0 10px 0;
-	margin: 0;
-	font-size: 20px;
-}
-
-.button {
-	font-family: "Helvetica Neue", sans-serif;
-
-	background-color: #F33842;
-	border-radius: 5px;
-	border: none;
-	color: #fff;
-}
-
-/******************************
-	SCSS FOR LARGER DIVICES
-******************************/
